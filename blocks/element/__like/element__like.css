@@ -1,0 +1,10 @@
+.element__like {
+  width: 22px;
+  height: 19px;
+  align-self: center;
+}
+
+.element__like:hover {
+  opacity: 0.6;
+  cursor: url("../../../images/Finger.svg"), pointer;
+}

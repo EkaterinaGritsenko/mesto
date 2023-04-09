@@ -1,0 +1,19 @@
+.header {
+  border-bottom: 1px white solid;
+  box-sizing: border-box;
+  width: 880px;
+  margin: 45px auto 36px;
+  padding-bottom: 37px;
+}
+
+@media (max-width: 880px) {
+  .header {
+    width: 581px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    width: 320px;
+  }
+}

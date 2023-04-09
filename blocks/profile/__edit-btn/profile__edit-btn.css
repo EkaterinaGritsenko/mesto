@@ -1,0 +1,14 @@
+.profile__edit-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #FFFFFF;
+  background-image: url(../../../images/edit-btn.svg);
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.profile__edit-btn:hover {
+  opacity: 0.6;
+  cursor: url("../../../images/Finger.svg"), pointer;
+}
