@@ -1,0 +1,11 @@
+.input-text {
+  all: unset;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  padding-bottom: 13px;
+  width: 358px;
+  align-self: center;
+  border-bottom: black 1px solid;
+}

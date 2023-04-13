@@ -11,6 +11,6 @@
 }
 
 .profile__add-btn:hover {
-   opacity: 0.6;
-   cursor: url("../../../images/Finger.svg"), pointer;
+  opacity: 0.6;
+  cursor: url("../../../images/Finger.svg"), pointer;
 }

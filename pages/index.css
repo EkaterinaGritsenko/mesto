@@ -21,4 +21,15 @@
 @import url(../blocks/flex-row/flex-row.css);
 @import url(../blocks/element/element__info/element__info.css);
 
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__content/popup__content.css);
+@import url(../blocks/popup/__close-btn/popup__close-btn.css);
+@import url(../blocks/popup/__header/popup__header.css);
+@import url(../blocks/popup/__save-btn/popup__save-btn.css);
+@import url(../blocks/popup/__close-btn/popup__close-btn.css);
+@import url(../blocks/popup/_open/popup_open.css);
+
+@import url(../blocks/input-text/input-text.css);
+
+
 @import url(../blocks/footer/footer.css);
