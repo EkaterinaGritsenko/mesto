@@ -1,9 +1,4 @@
 .popup__content {
-  position: fixed; 
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   width: 430px;
@@ -13,4 +8,4 @@
   border-radius: 10px;
   color: #000000;
   row-gap: 30px;
-  }
+}
