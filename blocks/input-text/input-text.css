@@ -9,3 +9,9 @@
   align-self: center;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
+@media (max-width: 600px) {
+  .input-text{
+    width: 238px;
+  }
+}

@@ -12,3 +12,12 @@
   border: 0;
   align-self: flex-end;
 }
+ 
+@media (max-width: 600px) {
+  .popup__close-btn {
+    width: 20px;
+    height: 20px;
+    right: 0px;
+    top: -16px;
+  }
+}

@@ -12,11 +12,12 @@
 @media (max-width: 880px) {
   .elements {
     max-width: 581px;
+    justify-items: center;
   }
 }
 
 @media (max-width: 600px) {
-    .elements {
-      width: 320px;
-    }
+  .elements {
+    width: 320px;
   }
+}

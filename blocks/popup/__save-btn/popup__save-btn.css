@@ -13,3 +13,9 @@
   color: #FFFFFF;
   margin-top: 18px;
 }
+
+@media (max-width: 600px) {
+  .popup__save-btn {
+    width: 238px;
+  }
+}

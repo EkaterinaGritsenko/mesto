@@ -6,3 +6,11 @@
   color: #000000;
   margin: 34px 64px 15px 36px;
 }
+
+@media (max-width: 600px) {
+  .popup__header {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 25px auto 36px;
+  }
+}

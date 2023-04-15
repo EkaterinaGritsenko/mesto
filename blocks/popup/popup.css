@@ -11,3 +11,11 @@
   align-items: center;
   display: none;
 }
+
+@media (max-width: 600px) {
+  .popup {
+    width: 282px;
+    height: 322px;
+    margin: 123px auto 123 px;
+  }
+}

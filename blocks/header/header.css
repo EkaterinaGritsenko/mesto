@@ -9,11 +9,12 @@
 @media (max-width: 880px) {
   .header {
     width: 581px;
+    padding-left: 27px;
   }
 }
 
 @media (max-width: 600px) {
   .header {
-    width: 320px;
+    width: 100%;
   }
 }
