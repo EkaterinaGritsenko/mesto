@@ -10,14 +10,16 @@
   background-repeat: no-repeat;
   border: 0;
   align-self: flex-end;
+  background-position: center;
 }
  
 @media (max-width: 600px) {
   .popup__close-btn {
     width: 20px;
     height: 20px;
-    right: -10px;
-    top: -30px;
+    right: 0px;
+    top: -36px;
     object-fit: contain;
+    background-image: url(../../../images/close-btn-small.svg);
   }
 }
