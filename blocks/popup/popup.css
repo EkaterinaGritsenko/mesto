@@ -4,18 +4,6 @@
   top: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  margin: 155px auto 155px;
-  width: 440px;
-  height: 340px;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
   display: none;
-}
-
-@media (max-width: 600px) {
-  .popup {
-    width: 282px;
-    height: 322px;
-    margin: 123px auto 123 px;
-  }
 }

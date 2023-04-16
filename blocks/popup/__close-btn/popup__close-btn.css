@@ -3,10 +3,9 @@
   background-image: url(../../../images/close-btn.svg);
   width: 32px;
   height: 32px;
-  background-color: black;
   position: relative;
-  right: -450px;
-  top: -8px;
+  right: -40px;
+  top: -40px;
   box-sizing: content-box;
   background-repeat: no-repeat;
   border: 0;
@@ -17,7 +16,8 @@
   .popup__close-btn {
     width: 20px;
     height: 20px;
-    right: 0px;
-    top: -16px;
+    right: -10px;
+    top: -30px;
+    object-fit: contain;
   }
 }
