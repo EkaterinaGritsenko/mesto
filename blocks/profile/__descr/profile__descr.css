@@ -19,3 +19,9 @@
     max-width: 400px;
   }
 }
+
+@media (max-width: 600px) {
+  .profile__descr {
+    max-width: 80%;
+  }
+}
