@@ -1,4 +1,4 @@
-.input-text {
+.popup__input-text {
   all: unset;
   font-weight: 400;
   font-size: 14px;
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 600px) {
-  .input-text{
+  .popup__input-text{
     width: 238px;
   }
 }
