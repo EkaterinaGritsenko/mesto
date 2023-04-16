@@ -12,3 +12,10 @@
   opacity: 0.6;
   cursor: url("../../../images/Finger.svg"), pointer;
 }
+
+@media (max-width: 600px) {
+  .profile__edit-btn {
+    width: 18px;
+    height: 18px;
+  }
+}

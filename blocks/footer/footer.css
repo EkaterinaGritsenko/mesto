@@ -2,18 +2,25 @@
 .footer {  
   max-width: 880px;
   margin: 0 auto 60px;
+  text-align: left;
+  color: #545454;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
 }
 
 @media (max-width: 880px) {
   .footer {
-    max-width: 581px;
-    text-align: left;
+    max-width: 581px;   
   }
 }
 
 @media (max-width: 600px) {
   .footer {
     width: 320px;
-    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    margin-left: 19px;
   }
 }

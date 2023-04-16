@@ -8,19 +8,12 @@
   color: #000000;
   margin: 195px auto 195px;
   align-items: center;
-  z-index: 3;
 }
 
 @media (max-width: 600px) {
   .popup__content {
     width: 282px;
     height: 322px;
+    margin: 123px auto 125px;
   }
 }
-/*
-
-@media (max-width: 600px) {
-  .popup {
-    margin: 123px auto 123 px;
-  }\
-  */

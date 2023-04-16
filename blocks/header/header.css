@@ -1,5 +1,5 @@
 .header {
-  border-bottom: 1px white solid;
+  border-bottom: 1px  rgba(84, 84, 84, 0.7) solid;
   box-sizing: border-box;
   width: 880px;
   margin: 45px auto 36px;
@@ -10,6 +10,8 @@
   .header {
     width: 581px;
     padding-left: 27px;
+    padding-bottom: 29px;
+    margin: 28px auto 32px;
   }
 }
 
