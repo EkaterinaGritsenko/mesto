@@ -19,9 +19,10 @@
 
 @media (max-width: 600px) {
   .footer {
-    width: 320px;
+    width: 100%;
     font-size: 14px;
     line-height: 17px;
     margin-left: 19px;
+    margin-bottom: 36px;
   }
 }
