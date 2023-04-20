@@ -7,6 +7,7 @@
   margin: 0 auto 66px;
   align-content: center;
   max-width: 880px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 880px) {
@@ -19,6 +20,6 @@
 
 @media (max-width: 600px) {
   .elements {
-    width: 320px;
+    width: 100%;
   }
 }
