@@ -1,6 +1,5 @@
 
 .footer {  
-  all: unset;
   max-width: 880px;
   margin: 0 auto 60px;
   text-align: left;
@@ -8,7 +7,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-
 }
 
 @media (max-width: 880px) {

@@ -1,4 +1,3 @@
-.footer__copyright {
-  padding: 0;
-  margin: 0;
-}
+.footer__copyright {  
+    all: unset;
+  }
