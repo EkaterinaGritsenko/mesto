@@ -1,7 +1,7 @@
 .popup__container {
   display: flex;
   flex-direction: column;
-  width: 440px;
+  width: 433px;
   background: #FFFFFF;
   border-radius: 10px;
   color: #000000;
@@ -14,6 +14,6 @@
 @media (max-width: 600px) {
   .popup__container {
     width: 282px;
-    margin: 133px auto auto;
+    margin: 122px auto auto;
   }
 }
