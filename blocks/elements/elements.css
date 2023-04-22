@@ -12,6 +12,7 @@
 
 @media (max-width: 880px) {
   .elements {
+    row-gap: 18px;
     max-width: 581px;
     justify-items: center;
     margin-bottom: 48px;
