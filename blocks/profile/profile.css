@@ -15,7 +15,9 @@
 
 @media (max-width: 600px) {
   .profile {
-    max-width: 100%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
   }
 }

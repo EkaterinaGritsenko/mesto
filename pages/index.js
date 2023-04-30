@@ -1,5 +1,5 @@
 // Находим форму в DOM
-let formElement = document.querySelector('.profile-form');// Воспользуйтесь методом querySelector()
+let formElement = document.querySelector('.popup__form');// Воспользуйтесь методом querySelector()
 let popup = document.querySelector('.popup');
 let openPopupBnt = document.querySelector('.profile__edit-btn');
 let closePopupBtn = document.querySelector('.popup__close-btn');

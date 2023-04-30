@@ -9,6 +9,7 @@
   background-size: 22px 22px;
   background-position: center;
   align-self: center;
+  border-radius: 2px;
 }
 
 .profile__add-btn:hover {
