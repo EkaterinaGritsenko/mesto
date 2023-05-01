@@ -10,6 +10,12 @@
   max-width: 500px;
 }
 
+@media (max-width: 1024px) {
+  .profile__fullname {
+    max-width: 450px;
+  }
+}
+
 @media (max-width: 880px) {
   .profile__descr {
     align-self: center;
@@ -18,12 +24,6 @@
     text-align: center;
     width:100%;
     max-width: 400px;
-  }
-}
-
-@media (max-width: 600px) {
-  .profile__descr {
-    max-width: 450px;
   }
 }
 
