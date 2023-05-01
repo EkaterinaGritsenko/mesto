@@ -1,7 +1,6 @@
 .profile__info-group {
   display: flex;
-  flex-direction: row; 
-  width: calc(100% - 220px);
+  flex-direction: row;
 }
 
 @media (max-width: 600px) {
