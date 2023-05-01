@@ -27,6 +27,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .profile__descr {
+    max-width: 350px;
+  }
+}
+
 @media (max-width: 400px) {
   .profile__descr {
     max-width: 300px;
