@@ -8,16 +8,8 @@
 
 @media (max-width: 880px) {
   .profile {
-    width: 581px;
+    max-width: 581px;
     margin-bottom: 34px;
-  }
-}
-
-@media (max-width: 600px) {
-  .profile {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
     flex-direction: column;
   }
 }

@@ -1,17 +1,16 @@
 .profile__info-group {
   display: flex;
   flex-direction: row; 
-}
-
-@media (max-width: 900px) {
-  .profile__info-group {
-    flex-direction: column;
-    align-items: center;
-  }  
+  width: calc(100% - 220px);
 }
 
 @media (max-width: 600px) {
   .profile__info-group {
-    margin-bottom: 32px;
+    width: calc(100% - 60px);
+    flex-direction: column;
+    margin-bottom: 34px;
+    align-items: center;
+    align-content: center;
+    align-self: center;
   }  
 }

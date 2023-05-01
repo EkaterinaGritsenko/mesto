@@ -7,7 +7,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  max-width: 450px;
+  max-width: 600px;
 }
 
 @media (max-width: 880px) {
@@ -15,11 +15,12 @@
     font-size: 27px;
     line-height: 33px;
     text-align: center;
+    max-width: 400px;
   }
 }
-
+ 
 @media (max-width: 400px) {
   .profile__fullname {
     max-width: 260px;
   }
-}
+} 
