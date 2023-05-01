@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 1024px) {
-  .profile__fullname {
+  .profile__descr {
     max-width: 450px;
   }
 }
