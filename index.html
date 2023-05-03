@@ -24,50 +24,7 @@
       </div>
       <button type="button" class="profile__add-btn" aria-label="Добавить"></button>
     </section>
-   <section class="elements">
-      <article class="element">
-        <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
-        <div class="element__info">
-          <h2 class="element__title">Карачаевск</h2>
-          <button type="button" class="element__like"  aria-label="Нравится"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/elbrus.jpg" alt="Эльбрус">
-        <div class="element__info">
-          <h2 class="element__title">Эльбрус</h2>
-          <button type="button" class="element__like"  aria-label="Нравится"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
-        <div class="element__info">
-          <h2 class="element__title">Домбай</h2>
-          <button type="button" class="element__like"  aria-label="Нравится"></button>
-      </div>  
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/elbrus.jpg" alt="Гора Эльбрус">
-        <div class="element__info">
-          <h2 class="element__title">Карачаевск</h2>
-          <button type="button" class="element__like"  aria-label="Нравится"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/dombai.jpg" alt="Домбай">
-        <div class="element__info">
-          <h2 class="element__title">Карачаевск</h2>
-          <button type="button" class="element__like"  aria-label="Нравится"></button>
-        </div>  
-      </article>
-      <article class="element">
-        <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаево-Черкессия">
-        <div class="element__info">
-          <h2 class="element__title">Карачаево-Черкессия</h2>
-          <button type="button" class="element__like"  aria-label="Нравится"></button>
-        </div>  
-      </article>
-    </section>
+   <section class="elements"></section>
   </main>   
 <footer class="footer">
   <p class="footer__copyright">© 2020 Mesto Russia</p>
@@ -83,6 +40,16 @@
     </form>
   </div>
 </div>
+<template id="element-template">
+  <article class="element">
+    <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
+    <button type="button" class="element__delete"  aria-label="Удалить"></button>
+    <div class="element__info">
+      <h2 class="element__title">Карачаевск</h2>
+      <button type="button" class="element__like"  aria-label="Нравится"></button>
+    </div>  
+  </article>
+</template>
 <script src="./pages/index.js"></script>
 </body>
 </html>

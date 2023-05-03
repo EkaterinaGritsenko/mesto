@@ -1,3 +1,71 @@
+// import { initialCards } from './constants.js';
+
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
+
+const elementTemplate = document.getElementById('element-template');
+
+const elementContainer = document.querySelector('.elements');
+
+const createElement = (cardElement) =>{
+  //console.log(elementTemplate);
+  const element = elementTemplate.content.querySelector('.element').cloneNode(true);
+
+  const elementImage = element.querySelector('.element__image');
+  const elementTitle = element.querySelector('.element__title');
+  const elementLikeButton = element.querySelector('.element__like');
+  const elementDeleteButton = element.querySelector('.element__delete');
+
+  elementTitle.textContent = cardElement.name;
+  elementImage.src = cardElement.link;
+  elementImage.alt = cardElement.name;
+
+  const handleDelete = () => {
+    element.remove();
+  }
+
+  const handleLike = (evt) => {
+    elementLikeButton.classList.toggle('element__like_active');
+  }
+
+  elementDeleteButton.addEventListener('click', handleDelete);
+  elementLikeButton.addEventListener('click', handleLike);
+
+  return element;
+}
+
+initialCards.forEach(function(card){
+  element = createElement(card);
+  elementContainer.appendChild (element);
+}
+
+)
+createElement(initialCards);
+
 // Находим форму в DOM
 let formElement = document.querySelector('.popup__form');// Воспользуйтесь методом querySelector()
 let popup = document.querySelector('.popup');
@@ -42,3 +110,4 @@ function handleFormSubmit (evt) {
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit);
+
