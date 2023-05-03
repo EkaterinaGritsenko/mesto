@@ -1,5 +1,3 @@
-// import { initialCards } from './constants.js';
-
 const initialCards = [
   {
     name: 'Архыз',
