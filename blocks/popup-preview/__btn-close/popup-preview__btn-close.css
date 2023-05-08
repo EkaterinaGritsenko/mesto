@@ -1,0 +1,13 @@
+.popup-preview__btn-close {  
+  all: unset;
+  background-image: url(../../../images/close-btn.svg);
+  min-width: 32px;
+  min-height: 32px;
+  position: relative;
+  background-repeat: no-repeat;
+  border: 0;
+  align-self: flex-end;
+  background-position: center;
+  left: 100%;
+  margin: 8px;
+}

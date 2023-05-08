@@ -51,14 +51,17 @@
     </form>
   </div>
 </div>
-<div class="popup popup-preview">
-  <figure>
-    <img
-      src="https://developer.mozilla.org/static/img/favicon144.png"
-      alt="The beautiful MDN logo." />
-    <figcaption>MDN Logo</figcaption>
+ <div class="popup popup-preview"> 
+  <div class="popup-preview__container">
+    <button class="popup-preview__close-btn" type="button" aria-label="Закрыть окно"></button>
+  <figure class="popup-preview__figure">
+    <img class="popup-preview__image"
+      src="./images/karachaevsk.jpg"
+      alt="Картинка" />
+    <figcaption class="popup-preview__figcaption">MDN Logo</figcaption>
   </figure>
-</div>
+  </div>
+</div> 
 <template id="element-template">
   <article class="element">
     <img class="element__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
