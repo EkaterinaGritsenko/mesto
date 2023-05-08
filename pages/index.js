@@ -79,7 +79,7 @@ let jobInput = document.querySelector('.popup__input_type_job');
 let elementPopupBtn = document.querySelector('.profile__add-btn'); 
 let closeElementPopupBtn = document.querySelector('.popup-element__close-btn'); 
 let nameElementInput = document.querySelector('.popup-element-name'); 
-let urlElementInput = document.querySelector('.popup-element__input_type_url');
+let urlElementInput = document.querySelector('.popup-element-url');
 let popupPreview_image = document.querySelector('.popup-preview__image'); 
 let popupPreview_figcaption = document.querySelector('.popup-preview__figcaption'); 
 let popupPreview_close_btn = document.querySelector('.popup-preview__close-btn');
@@ -142,7 +142,7 @@ function handleFormSubmit (evt) {
 function handleElementFormSubmit (evt) { 
   evt.preventDefault();
   const elementName =nameElementInput.value; 
-  const elementUrl = document.querySelector('.popup-element__input_type_url').value; 
+  const elementUrl =urlElementInput.value; 
   const cardForAdd = [
    {
       name:  elementName,
@@ -160,8 +160,6 @@ closePopupBtn.addEventListener('click', closePopupProfile );
 elementPopupBtn.addEventListener('click', openPopupElement) ; 
 closeElementPopupBtn.addEventListener('click', closePopupElement ); 
 popupPreview_close_btn.addEventListener('click', handlePreviewFormClose); 
-// Прикрепляем обработчик к форме: 
-// он будет следить за событием “submit” - «отправка» 
 profileForm.addEventListener('submit', handleFormSubmit); 
 elementForm.addEventListener('submit', handleElementFormSubmit); 
 
