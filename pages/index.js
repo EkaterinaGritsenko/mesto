@@ -48,8 +48,6 @@ const createElement = (cardElement) =>{
 
   const handleImageClick = (evt) => {
     popupPreview_image.src = elementImage.src;
-    //console.log('elementImage.alt= '+elementImage.alt);
-    //popupPreview_image.alt = elementImage.alt;
     popupPreview_figcaption.textContent =  elementImage.alt;
     openPopupPreview();
   }
@@ -80,7 +78,7 @@ let nameInput = document.querySelector('.popup__input_type_name');
 let jobInput = document.querySelector('.popup__input_type_job');
 let elementPopupBtn = document.querySelector('.profile__add-btn'); 
 let closeElementPopupBtn = document.querySelector('.popup-element__close-btn'); 
-let nameElementInput = document.querySelector('.popup-element__input_type_name'); 
+let nameElementInput = document.querySelector('.popup-element-name'); 
 let urlElementInput = document.querySelector('.popup-element__input_type_url');
 let popupPreview_image = document.querySelector('.popup-preview__image'); 
 let popupPreview_figcaption = document.querySelector('.popup-preview__figcaption'); 
@@ -143,7 +141,7 @@ function handleFormSubmit (evt) {
 
 function handleElementFormSubmit (evt) { 
   evt.preventDefault();
-  const elementName = document.querySelector('.popup-element__input_type_name').value; 
+  const elementName =nameElementInput.value; 
   const elementUrl = document.querySelector('.popup-element__input_type_url').value; 
   const cardForAdd = [
    {
