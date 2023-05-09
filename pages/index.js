@@ -43,8 +43,8 @@ const cardPopupBtn = document.querySelector('.profile__add-btn');
 const closeCardPopupBtn = document.querySelector('.popup-card__close-btn'); 
 const nameCardInput = document.querySelector('.popup-card__name'); 
 const urlCardInput = document.querySelector('.popup-card__url');
-const popupImage_image = document.querySelector('.popup-image_image'); 
-const popupImage_figcaption = document.querySelector('.popup-image_figcaption'); 
+const popupImage_image = document.querySelector('.popup-image__image'); 
+const popupImage_figcaption = document.querySelector('.popup-image__figcaption'); 
 const popupImageCloseBtn = document.querySelector('.popup-image__close-btn');
 
 const createCard = (cardElement) => {
