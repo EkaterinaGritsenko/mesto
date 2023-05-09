@@ -1,4 +1,4 @@
-.element__like {
+.card__like {
   padding: 0;
   min-width: 22px;
   min-height: 19px;
@@ -10,7 +10,7 @@
   background-color: white;
 }
 
-.element__like:hover {
+.card__like:hover {
   opacity: 0.5;
   cursor: pointer;
 }
