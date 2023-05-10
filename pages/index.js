@@ -142,12 +142,11 @@ function handleElementFormSubmit (evt) {
   evt.preventDefault();
   const elementName =nameCardInput.value; 
   const elementUrl =urlCardInput.value; 
-  const cardForAdd = [
-   {
+  const elementCard = createCard ({
       name:  elementName,
       link: elementUrl
-    }];
-    let elementCard = createCard (cardForAdd[0]);
+    });
+    
     cardsContainer.prepend(elementCard, cardsContainer.firstElementChild);
     closePopupCard(); 
 }
