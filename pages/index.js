@@ -129,11 +129,9 @@ function handleFormSubmit (evt) {
                                                 // Так мы можем определить свою логику отправки. 
                                                 // О том, как это делать, расскажем позже. 
   // Получите значение полей jobInput и nameInput из свойства value 
-  let nameInputValue = nameInput.value; 
-  let jobInputValue = jobInput.value; 
-  // Выберите элементы, куда должны быть вставлены значения полей 
-  let profileFullname = document.querySelector('.profile__fullname'); 
-  let profileDescr = document.querySelector('.profile__descr'); 
+  const nameInputValue = nameInput.value; 
+  const jobInputValue = jobInput.value; 
+
   // Вставьте новые значения с помощью textContent 
   profileFullname.textContent = nameInput.value; 
   profileDescr.textContent = jobInput.value; 
