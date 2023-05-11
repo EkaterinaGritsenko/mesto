@@ -160,13 +160,27 @@ profileForm.addEventListener('submit', handleFormSubmit);
 cardForm.addEventListener('submit', handleElementFormSubmit); 
 
 profilePopup.addEventListener('click', function (evt) {
-  closePopupProfile(); 
+  if (evt.target.classList.contains('popup-profile')) {
+    closePopupProfile(); 
+  }
 }); 
 
 cardPopup.addEventListener('click', function (evt) {
-  closePopupCard(); 
+  if (evt.target.classList.contains('popup-card')) {
+    closePopupCard(); 
+  }
 }); 
 
 imagePopup.addEventListener('click', function (evt) {
-  handleImageFormClose(); 
+  if (evt.target.classList.contains('popup-image')) {
+    handleImageFormClose(); 
+  }
 }); 
+
+/*profilePopup.addEventListener('keydown', function (evt) {
+  console.log('profilePopup listener keydown');
+  console.log(evt.key);
+    if (evt.key === 'esc') {
+      closePopupProfile(); 
+   }
+}); */
