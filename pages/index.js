@@ -159,3 +159,14 @@ popupImageCloseBtn.addEventListener('click', handleImageFormClose);
 profileForm.addEventListener('submit', handleFormSubmit); 
 cardForm.addEventListener('submit', handleElementFormSubmit); 
 
+profilePopup.addEventListener('click', function (evt) {
+  closePopupProfile(); 
+}); 
+
+cardPopup.addEventListener('click', function (evt) {
+  closePopupCard(); 
+}); 
+
+imagePopup.addEventListener('click', function (evt) {
+  handleImageFormClose(); 
+}); 
