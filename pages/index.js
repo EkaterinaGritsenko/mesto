@@ -151,6 +151,27 @@ function handleElementFormSubmit (evt) {
     closePopupCard(); 
 }
 
+document.addEventListener('keydown', function (evt) {
+
+  if (evt.key === "Escape" || evt.key === "Esc") {
+  /*  if (evt.target.classList.contains('popup-profile')) {
+      closePopupProfile(); 
+    }
+    if (evt.target.classList.contains('popup-card')) {
+      closePopupCard(); 
+    if (evt.target.classList.contains('popup-image')) {
+      handleImageFormClose(); 
+    }
+    }
+    */
+    console.log('evt.target');
+    console.log(evt.target);
+    console.log('------------');
+   } 
+   
+   
+});
+
 openProfilePopupBtn.addEventListener('click', openPopupProfile ); 
 closePopupProfileBtn.addEventListener('click', closePopupProfile ); 
 cardPopupBtn.addEventListener('click', openPopupCard) ; 
@@ -159,13 +180,14 @@ popupImageCloseBtn.addEventListener('click', handleImageFormClose);
 profileForm.addEventListener('submit', handleFormSubmit); 
 cardForm.addEventListener('submit', handleElementFormSubmit); 
 
+
 profilePopup.addEventListener('click', function (evt) {
   if (evt.target.classList.contains('popup-profile')) {
     closePopupProfile(); 
   }
 }); 
 
-cardPopup.addEventListener('click', function (evt) {
+cardPopup.addEventListener('click', function (evt) {;
   if (evt.target.classList.contains('popup-card')) {
     closePopupCard(); 
   }
@@ -177,10 +199,28 @@ imagePopup.addEventListener('click', function (evt) {
   }
 }); 
 
-/*profilePopup.addEventListener('keydown', function (evt) {
-  console.log('profilePopup listener keydown');
-  console.log(evt.key);
-    if (evt.key === 'esc') {
-      closePopupProfile(); 
-   }
-}); */
+
+
+// const enableValidation = () => {
+//   profileForm.addEventListener('submit', (evt) => {
+//     evt.preventDefault();
+//   })
+//   setEventListeners(profileForm);
+// }
+
+// const setEventListeners = (formToValidate) => {
+//   const formInputs = Array.from(formToValidate.querySelectorAll('popup__input'));
+//   formInputs.forEach(input => {
+//     сonsole.log(input);
+//     // input.setEventListeners('ínput', () => {
+//     //   checkInputValidity(input);
+  
+//     // })
+//   });
+// }
+
+// const checkInputValidity =(input) =>{
+//  console.log(input);
+// }
+
+// enableValidation();
