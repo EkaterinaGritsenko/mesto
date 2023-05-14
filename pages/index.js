@@ -152,24 +152,17 @@ function handleElementFormSubmit (evt) {
 }
 
 document.addEventListener('keydown', function (evt) {
-
   if (evt.key === "Escape" || evt.key === "Esc") {
-  /*  if (evt.target.classList.contains('popup-profile')) {
+   if (evt.target.classList.contains('popup-profile')) {
       closePopupProfile(); 
     }
     if (evt.target.classList.contains('popup-card')) {
       closePopupCard(); 
+    }  
     if (evt.target.classList.contains('popup-image')) {
       handleImageFormClose(); 
-    }
-    }
-    */
-    console.log('evt.target');
-    console.log(evt.target);
-    console.log('------------');
-   } 
-   
-   
+    } 
+  }
 });
 
 openProfilePopupBtn.addEventListener('click', openPopupProfile ); 
@@ -198,29 +191,3 @@ imagePopup.addEventListener('click', function (evt) {
     handleImageFormClose(); 
   }
 }); 
-
-
-
-// const enableValidation = () => {
-//   profileForm.addEventListener('submit', (evt) => {
-//     evt.preventDefault();
-//   })
-//   setEventListeners(profileForm);
-// }
-
-// const setEventListeners = (formToValidate) => {
-//   const formInputs = Array.from(formToValidate.querySelectorAll('popup__input'));
-//   formInputs.forEach(input => {
-//     сonsole.log(input);
-//     // input.setEventListeners('ínput', () => {
-//     //   checkInputValidity(input);
-  
-//     // })
-//   });
-// }
-
-// const checkInputValidity =(input) =>{
-//  console.log(input);
-// }
-
-// enableValidation();

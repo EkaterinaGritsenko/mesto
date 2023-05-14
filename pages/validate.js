@@ -1,6 +1,5 @@
 // включение валидации вызовом enableValidation
 // все настройки передаются при вызове
-/*
 enableValidation({
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -9,8 +8,6 @@ enableValidation({
     inputErrorClass: 'popup__input_type_error',
     errorClass: 'popup__error_visible'
   });
-  */
-console.log(profileForm);
 
  const enableValidation = () => {
   profileForm.addEventListener('submit', (evt) => {
@@ -19,10 +16,10 @@ console.log(profileForm);
    setEventListeners(profileForm);
  }
 
-
 const setEventListeners = (formToValidate) => {
   const formInputs = Array.from(formToValidate.querySelectorAll('.popup__input'));
   const popupButton = formToValidate.querySelector('.popup__save-btn');
+  disableButton(popupButton);
   formInputs.forEach(input => {
     input.addEventListener('input', () => {
     checkInputValidity(input);
