@@ -1,6 +1,8 @@
-.popup__save-btn-invalid {
+.popup__save-btn_invalid {
   opacity: 0.2;
   border: 1px solid rgba(0, 0, 0, 1);
   border-radius: 2px;
   cursor: not-allowed;
+  background-color: white;
+  color:rgba(0, 0, 0, 1);
 }
