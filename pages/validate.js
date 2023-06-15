@@ -9,8 +9,6 @@ const validationConfig = {
   errorClass: 'popup__error_visible'
 };
 
-
-
 const enableValidation =({formSelector, ...rest}) => {
   const forms =  Array.from(document.querySelectorAll(formSelector));
   forms.forEach(form =>{
@@ -18,8 +16,7 @@ const enableValidation =({formSelector, ...rest}) => {
     evt.preventDefault();
   })
   setEventListeners(form, rest); 
-  })
- 
+  }) 
 }
 
 const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, ...rest }) => { 
@@ -34,9 +31,8 @@ const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, .
       } else {
         enableButton(formButton, rest);
       }
-    } )
+    })
   })
-
 }
 
 const checkInputValidity = (input) => {
