@@ -19,22 +19,21 @@ const enableValidation =({formSelector, ...rest}) => {
   }) 
 }
 
-const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, ...rest }) => { 
+const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, inputErrorClass, ...rest }) => { 
   const formInputs = Array.from(formToValidate.querySelectorAll(inputSelector));
   const formButton = formToValidate.querySelector(submitButtonSelector);
+  
   disableButton(formButton, rest);
   formInputs.forEach(input => { 
    
     input.addEventListener('input', () =>{
       checkInputValidity(input);
       if(hasInvalidInput(formInputs)) {
-        console.log('===input===');
-        console.log(input);
          disableButton(formButton, rest);
-         input.classList.add('popup__input_type_error');
+         input.classList.add(inputErrorClass);
       } else {
         enableButton(formButton, rest);
-        input.classList.remove('popup__input_type_error');
+        input.classList.remove(inputErrorClass);
       }
     })
   })
