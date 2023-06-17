@@ -35,9 +35,9 @@
     <h2 class="popup__header popup-profile__header">Редактировать профиль</h2>
     <form name="popup__form" class="popup__form popup-profile__form" novalidate>
       <input type="text" placeholder="Имя" required minlength="2" maxlength="40"  class="popup__input  popup__input_type_name" name="popup__input_type_name" id="popup__input_type_name">
-      <span class="popup__input_type_error" id='popup__input_type_name-error'></span>
+      <span class="error" id='popup__input_type_name-error'></span>
       <input type="text" placeholder="Звание" required minlength="2" maxlength="200" class="popup__input  popup__input_type_job" name="popup__input_type_job" id="popup__input_type_job">
-      <span class="popup__input_type_error" id='popup__input_type_job-error'></span>
+      <span class="error" id='popup__input_type_job-error'></span>
       <button class="popup__save-btn popup-profile__save-btn"    type="submit">Сохранить</button>
     </form>
   </div>
@@ -48,9 +48,9 @@
     <h2 class="popup__header popup-card__header">Новое место</h2>
     <form name="popup-card__form" class="popup__form popup-card__form" novalidate>
       <input type="text" placeholder="Название" required  minlength="2" maxlength="30" class="popup__input popup-card__name" name="popup-card__name" id="popup-card__name" >
-      <span class="popup__input_type_error" id = 'popup-card__name-error'></span>
+      <span class="error" id = 'popup-card__name-error'></span>
       <input type="url" placeholder="Ссылка на картинку" required class="popup__input  popup-card__url" name="popup-card__url" id="popup-card__url">
-      <span class="popup__input_type_error" id = 'popup-card__url-error'></span>
+      <span class="error" id = 'popup-card__url-error'></span>
       <button class="popup__save-btn popup-card__save-btn"  type="submit">Сохранить</button>
     </form>
   </div>

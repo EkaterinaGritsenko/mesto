@@ -24,12 +24,17 @@ const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, .
   const formButton = formToValidate.querySelector(submitButtonSelector);
   disableButton(formButton, rest);
   formInputs.forEach(input => { 
+   
     input.addEventListener('input', () =>{
       checkInputValidity(input);
       if(hasInvalidInput(formInputs)) {
+        console.log('===input===');
+        console.log(input);
          disableButton(formButton, rest);
+         input.classList.add('popup__input_type_error');
       } else {
         enableButton(formButton, rest);
+        input.classList.remove('popup__input_type_error');
       }
     })
   })
