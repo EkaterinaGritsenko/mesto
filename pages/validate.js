@@ -1,3 +1,4 @@
+
 // включение валидации вызовом enableValidation
 // все настройки передаются при вызове
 const validationConfig = {
@@ -8,6 +9,8 @@ const validationConfig = {
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 };
+
+
 
 const enableValidation =({formSelector, ...rest}) => {
   const forms =  Array.from(document.querySelectorAll(formSelector));
@@ -24,26 +27,26 @@ const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, i
   const formButton = formToValidate.querySelector(submitButtonSelector);
   
   disableButton(formButton, rest);
+
   formInputs.forEach(input => { 
-   
     input.addEventListener('input', () =>{
-      checkInputValidity(input);
+      checkInputValidity(input, inputErrorClass);
       if(hasInvalidInput(formInputs)) {
          disableButton(formButton, rest);
-         input.classList.add(inputErrorClass);
       } else {
-        enableButton(formButton, rest);
-        input.classList.remove(inputErrorClass);
+        enableButton(formButton, rest); 
       }
     })
   })
 }
 
-const checkInputValidity = (input) => {
+const checkInputValidity = (input, inputErrorClass) => {
   const currentInputErrorContainer = document.querySelector(`#${input.id}-error`) ;
   if (input.checkValidity()) {
+    input.classList.remove(inputErrorClass);
     currentInputErrorContainer.textContent = '';
   } else {
+    input.classList.add(inputErrorClass);
     currentInputErrorContainer.textContent = input.validationMessage
   }
 }
@@ -58,8 +61,9 @@ const enableButton = (button, {inactiveButtonClass}) => {
 }
 
 const disableButton = (button, {inactiveButtonClass}) => {
-  button.classList.add(inactiveButtonClass);//('popup__save-btn_invalid');
+  button.classList.add(inactiveButtonClass);
   button.setAttribute('disabled', true);
 }
 
+//export default enableValidation;
 enableValidation(validationConfig);

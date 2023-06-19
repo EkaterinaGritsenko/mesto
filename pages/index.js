@@ -1,4 +1,3 @@
-
 const initialCards = [
   {
     name: 'Архыз',
@@ -43,8 +42,8 @@ const cardPopupBtn = document.querySelector('.profile__add-btn');
 const closeCardPopupBtn = document.querySelector('.popup-card__close-btn'); 
 const nameCardInput = document.querySelector('.popup-card__name'); 
 const urlCardInput = document.querySelector('.popup-card__url');
-const popupImage_image = document.querySelector('.popup-image__image'); 
-const popupImage_figcaption = document.querySelector('.popup-image__figcaption'); 
+const popupImage = document.querySelector('.popup-image__image'); 
+const popupImageFigcaption = document.querySelector('.popup-image__figcaption'); 
 const popupImageCloseBtn = document.querySelector('.popup-image__close-btn');
 
 const createCard = (cardElement) => {
@@ -67,9 +66,9 @@ const createCard = (cardElement) => {
   }
 
   const handleImageClick = (evt) => {
-    popupImage_image.src = cardImage.src;
-    popupImage_image.alt =  cardImage.alt;
-    popupImage_figcaption.textContent =  cardImage.alt;
+    popupImage.src = cardImage.src;
+    popupImage.alt =  cardImage.alt;
+    popupImageFigcaption.textContent =  cardImage.alt;
     openPopupImage();
   }
 
@@ -88,9 +87,11 @@ initialCards.forEach( function(card) {
 
 function openPopup(popupForm) { 
   popupForm.classList.add('popup_opened'); 
+  document.addEventListener('keydown', keyEscHandler);
 }
 
 function closePopup(popupForm) { 
+  document.removeEventListener('keydown', keyEscHandler);
   popupForm.classList.remove('popup_opened'); 
 }
 
@@ -105,8 +106,7 @@ function closePopupProfile() {
 } 
 
 function openPopupCard() {
-  nameCardInput.value = '';
-  urlCardInput.value = '';
+  cardForm.reset();
   openPopup(cardPopup);
 }
 
@@ -124,7 +124,7 @@ function handleImageFormClose() {
 
 // Обработчик «отправки» формы, хотя пока 
 // она никуда отправляться не будет 
-function handleFormSubmit (evt) { 
+function submitEditProfileForm (evt) { 
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы. 
                                                 // Так мы можем определить свою логику отправки. 
                                                 // О том, как это делать, расскажем позже. 
@@ -138,7 +138,7 @@ function handleFormSubmit (evt) {
   closePopupProfile(); 
 } 
 
-function handleElementFormSubmit (evt) { 
+function submitAddCardForm (evt) { 
   evt.preventDefault();
   const elementName =nameCardInput.value; 
   const elementUrl =urlCardInput.value; 
@@ -151,27 +151,20 @@ function handleElementFormSubmit (evt) {
     closePopupCard(); 
 }
 
-document.addEventListener('keydown', function (evt) {
+function keyEscHandler (evt) {
   if (evt.key === "Escape" || evt.key === "Esc") {
-   if (evt.target.classList.contains('popup-profile')) {
-      closePopupProfile(); 
-    }
-    if (evt.target.classList.contains('popup-card')) {
-      closePopupCard(); 
-    }  
-    if (evt.target.classList.contains('popup-image')) {
-      handleImageFormClose(); 
-    } 
-  }
-});
+    const formForClose =  document.querySelector('.popup_opened'); 
+    closePopup(formForClose);
+}
+}
 
 openProfilePopupBtn.addEventListener('click', openPopupProfile ); 
 closePopupProfileBtn.addEventListener('click', closePopupProfile ); 
 cardPopupBtn.addEventListener('click', openPopupCard) ; 
 closeCardPopupBtn.addEventListener('click', closePopupCard); 
 popupImageCloseBtn.addEventListener('click', handleImageFormClose); 
-profileForm.addEventListener('submit', handleFormSubmit); 
-cardForm.addEventListener('submit', handleElementFormSubmit); 
+profileForm.addEventListener('submit', submitEditProfileForm); 
+cardForm.addEventListener('submit', submitAddCardForm); 
 
 
 profilePopup.addEventListener('click', function (evt) {
