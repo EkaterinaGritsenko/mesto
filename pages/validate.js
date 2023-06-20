@@ -4,13 +4,11 @@
 const validationConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save-btn',
-  inactiveButtonClass: 'popup__save-btn_invalid',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass:'popup__button_disabled', // 'popup__save-btn_invalid',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 };
-
-
 
 const enableValidation =({formSelector, ...rest}) => {
   const forms =  Array.from(document.querySelectorAll(formSelector));
