@@ -1,30 +1,3 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 const cardTemplate = document.getElementById('card-template');
 const cardsContainer = document.querySelector('.cards');
 const profileForm = document.querySelector('.popup__form');// Воспользуйтесь методом querySelector() 
@@ -107,6 +80,9 @@ function closePopupProfile() {
 
 function openPopupCard() {
   cardForm.reset();
+  const  button = cardForm.querySelector(validationConfig.submitButtonSelector);
+  button.classList.add(validationConfig.inactiveButtonClass);
+  button.setAttribute('disabled', true);
   openPopup(cardPopup);
 }
 
@@ -125,10 +101,7 @@ function handleImageFormClose() {
 // Обработчик «отправки» формы, хотя пока 
 // она никуда отправляться не будет 
 function submitEditProfileForm (evt) { 
-  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы. 
-                                                // Так мы можем определить свою логику отправки. 
-                                                // О том, как это делать, расскажем позже. 
-  // Получите значение полей jobInput и nameInput из свойства value 
+  evt.preventDefault(); 
   const nameInputValue = nameInput.value; 
   const jobInputValue = jobInput.value; 
 

@@ -1,14 +1,15 @@
-
 // включение валидации вызовом enableValidation
 // все настройки передаются при вызове
+ 
 const validationConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
-  inactiveButtonClass:'popup__button_disabled', 
+  inactiveButtonClass: 'popup__button_disabled', 
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible'
 };
+ 
 
 const enableValidation =({formSelector, ...rest}) => {
   const forms =  Array.from(document.querySelectorAll(formSelector));
@@ -23,7 +24,6 @@ const enableValidation =({formSelector, ...rest}) => {
 const setEventListeners = (formToValidate,{inputSelector,submitButtonSelector, inputErrorClass, ...rest }) => { 
   const formInputs = Array.from(formToValidate.querySelectorAll(inputSelector));
   const formButton = formToValidate.querySelector(submitButtonSelector);
-  
   disableButton(formButton, rest);
 
   formInputs.forEach(input => { 
@@ -63,5 +63,4 @@ const disableButton = (button, {inactiveButtonClass}) => {
   button.setAttribute('disabled', true);
 }
 
-//export default enableValidation;
 enableValidation(validationConfig);
