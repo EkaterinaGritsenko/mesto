@@ -1,15 +1,6 @@
-import formValidator from "./formValidator.js";
-import Card from './card.js';
-import initialCards from './constants.js';
-const validationConfig = {
- //formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled', 
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-};
- 
+import FormValidator from "../components/formValidator.js";
+import Card from '../components/card.js';
+import  {validationConfig,initialCards }  from '../utils/constants.js';
 
 const profileForm = document.querySelector('.popup__form');// форма !! 
 const profilePopup = document.querySelector('.popup-profile'); 
@@ -28,15 +19,28 @@ const cardPopup = document.querySelector('.popup-card');
 const closeCardPopupBtn = document.querySelector('.popup-card__close-btn'); 
 const nameCardInput = document.querySelector('.popup-card__name'); 
 const urlCardInput = document.querySelector('.popup-card__url');
+const popupImageCloseBtn = document.querySelector('.popup-image__close-btn');
+const imagePopup = document.querySelector('.popup-image'); 
 
-const formPopup = new formValidator(profilePopup, validationConfig); //создание экземпляра валидируемого класса для профайла
-const formCard = new formValidator(cardForm, validationConfig);//создание экземпляра валидируемого класса для карточки
+const formPopup = new FormValidator(profilePopup, validationConfig); //создание экземпляра валидируемого класса для профайла
+//console.log(formPopup);
+const formCard = new FormValidator(cardForm, validationConfig);//создание экземпляра валидируемого класса для карточки
+//console.log(formCard);
 formPopup.enableValidation();
 formCard.enableValidation();
 
+
+function handleImageClick(a, b)  {
+  const popupImage = document.querySelector('.popup-image__image'); 
+  const popupImageFigcaption = document.querySelector('.popup-image__figcaption'); 
+  popupImage.src = b;
+  popupImage.alt =  a;
+  popupImageFigcaption.textContent = a;
+  openPopupImage();
+}
  
 initialCards.forEach((item) =>  {
-  const newCard = new Card(item.name, item.link);
+  const newCard = new Card('.card-template', item.name, item.link, handleImageClick);
   const cardElement = newCard.generateCard();
   document.querySelector('.cards').append(cardElement);
  }
@@ -64,23 +68,24 @@ function closePopupProfile() {
 
 function openPopupCard() {
   cardForm.reset();
-  const  button = cardForm.querySelector(validationConfig.submitButtonSelector);
-  button.classList.add(validationConfig.inactiveButtonClass);
-  button.setAttribute('disabled', true);
+  formCard._disableButton();
   openPopup(cardPopup);
 }
 
 function closePopupCard() {
   closePopup(cardPopup);
 }
-/*
+
+
 function openPopupImage() {
   openPopup(imagePopup);
-}*/
+  document.addEventListener('keydown', keyEscHandler);
+}
 
 function handleImageFormClose() {
   closePopup(imagePopup);
 }
+
 
 // Обработчик «отправки» формы, хотя пока 
 // она никуда отправляться не будет 
@@ -99,13 +104,11 @@ function submitAddCardForm (evt) {
   evt.preventDefault();
   const elementName =nameCardInput.value; 
   const elementUrl =urlCardInput.value; 
-  const elementCard = createCard ({
-      name:  elementName,
-      link: elementUrl
-    });
-    
-    cardsContainer.prepend(elementCard, cardsContainer.firstElementChild);
-    closePopupCard(); 
+  const newCard = new Card('.card-template', elementName, elementUrl, handleImageClick);
+  const elementCard = newCard.generateCard();
+
+  cardsContainer.prepend(elementCard);
+  closePopupCard(); 
 }
 
 function keyEscHandler (evt) {
@@ -115,22 +118,22 @@ function keyEscHandler (evt) {
 }
 }
 
+function closePopupByOverlay(evt) {
+  if (evt.target.classList.contains('popup')) { 
+    closePopup(evt.currentTarget)
+  } 
+}
+
 openProfilePopupBtn.addEventListener('click', openPopupProfile ); 
 closePopupProfileBtn.addEventListener('click', closePopupProfile ); 
+ 
 cardPopupBtn.addEventListener('click', openPopupCard) ; 
 closeCardPopupBtn.addEventListener('click', closePopupCard); 
+
+popupImageCloseBtn.addEventListener('click',  handleImageFormClose); 
+ 
 profileForm.addEventListener('submit', submitEditProfileForm); 
 cardForm.addEventListener('submit', submitAddCardForm); 
-
-
-profilePopup.addEventListener('click', function (evt) {
-  if (evt.target.classList.contains('popup-profile')) {
-    closePopupProfile(); 
-  }
-}); 
-
-cardPopup.addEventListener('click', function (evt) {;
-  if (evt.target.classList.contains('popup-card')) {
-    closePopupCard(); 
-  }
-}); 
+profilePopup.addEventListener('click', closePopupByOverlay);
+cardPopup.addEventListener('click', closePopupByOverlay);
+imagePopup.addEventListener('click', closePopupByOverlay);

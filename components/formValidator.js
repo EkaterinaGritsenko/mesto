@@ -1,4 +1,4 @@
-class formValidator {
+class FormValidator {
   constructor(
     form,
     {inputSelector, submitButtonSelector, inactiveButtonClass, inputErrorClass, errorClass}
@@ -21,7 +21,6 @@ class formValidator {
     this._disableButton();
     this._formInputs.forEach(input => { 
     input.addEventListener('input', (evt) =>{
-    // console.log(input.value);
     this._checkInputValidity(input);
     if(this._hasInvalidInput()) {
       this._disableButton();
@@ -58,4 +57,4 @@ class formValidator {
     }
 } 
     
-export default formValidator;
+export default FormValidator;
