@@ -23,9 +23,7 @@ const popupImageCloseBtn = document.querySelector('.popup-image__close-btn');
 const imagePopup = document.querySelector('.popup-image'); 
 
 const formPopup = new FormValidator(profilePopup, validationConfig); //создание экземпляра валидируемого класса для профайла
-//console.log(formPopup);
 const formCard = new FormValidator(cardForm, validationConfig);//создание экземпляра валидируемого класса для карточки
-//console.log(formCard);
 formPopup.enableValidation();
 formCard.enableValidation();
 
@@ -85,7 +83,6 @@ function openPopupImage() {
 function handleImageFormClose() {
   closePopup(imagePopup);
 }
-
 
 // Обработчик «отправки» формы, хотя пока 
 // она никуда отправляться не будет 

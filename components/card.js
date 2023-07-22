@@ -22,7 +22,6 @@ class Card {
     this._element = this._getTemplate();
     this._buttonLike = this._element.querySelector('.card__like');
     this._cardDeleteButton = this._element.querySelector('.card__delete');
-    //this._imagePopup = document.querySelector('.popup-image'); 
     // Добавим данные
     this._cardImage = this._element.querySelector('.card__image');
     this._cardImage.src = this._image;
@@ -41,13 +40,6 @@ class Card {
       this._handleDelete();  
     });
 
-    //this._popupImageCloseBtn.addEventListener('click',  () => { this._handleImageFormClose()}); 
-}
-/*
-  _handleImageFormClose(){
-    this._closePopup();
- }*/
-
   _handleLike() {
     this._buttonLike.classList.toggle('card__like_active');
   }
@@ -55,22 +47,5 @@ class Card {
   _handleDelete() {
     this._element.remove();
   }
-/*
-  _handleImageClick() {
-    const popupImage = document.querySelector('.popup-image__image'); 
-    const popupImageFigcaption = document.querySelector('.popup-image__figcaption'); 
-  
-    popupImage.src = this._image;
-    popupImage.alt =  this._name;
-    popupImageFigcaption.textContent =  this._name;
-    this._openPopupImage();
-  }
-  
-  _openPopupImage() {    
-    this._imagePopup.classList.add('popup_opened'); 
-    //document.addEventListener('keydown', keyEscHandler);
-  }
-  */
-}
 
 export default Card;
