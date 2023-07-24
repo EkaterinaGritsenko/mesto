@@ -22,24 +22,31 @@ const urlCardInput = document.querySelector('.popup-card__url');
 const popupImageCloseBtn = document.querySelector('.popup-image__close-btn');
 const imagePopup = document.querySelector('.popup-image'); 
 
-const formPopup = new FormValidator(profilePopup, validationConfig); //создание экземпляра валидируемого класса для профайла
-const formCard = new FormValidator(cardForm, validationConfig);//создание экземпляра валидируемого класса для карточки
-formPopup.enableValidation();
-formCard.enableValidation();
+const formEditPopupValidator= new FormValidator(profilePopup, validationConfig); //создание экземпляра валидируемого класса для профайла
+const formCardPopupValidator = new FormValidator(cardForm, validationConfig);//создание экземпляра валидируемого класса для карточки
+ 
+formEditPopupValidator.enableValidation();
+formCardPopupValidator.enableValidation();
 
 
-function handleImageClick(a, b)  {
+function handleImageClick(name, link)  {
   const popupImage = document.querySelector('.popup-image__image'); 
   const popupImageFigcaption = document.querySelector('.popup-image__figcaption'); 
-  popupImage.src = b;
-  popupImage.alt =  a;
-  popupImageFigcaption.textContent = a;
+  popupImage.src = link;
+  popupImage.alt =  name;
+  popupImageFigcaption.textContent = name;
   openPopupImage();
 }
  
+const createCard = (name, link) => {
+  const newCard = new Card('.card-template', name, link, handleImageClick);
+  return newCard.generateCard();
+}
+
 initialCards.forEach((item) =>  {
-  const newCard = new Card('.card-template', item.name, item.link, handleImageClick);
-  const cardElement = newCard.generateCard();
+  //const newCard = new Card('.card-template', item.name, item.link, handleImageClick);
+  //const cardElement = newCard.generateCard();
+  const cardElement = createCard( item.name, item.link);
   document.querySelector('.cards').append(cardElement);
  }
 );
@@ -66,7 +73,7 @@ function closePopupProfile() {
 
 function openPopupCard() {
   cardForm.reset();
-  formCard._disableButton();
+  formCardPopupValidator.disableButton();
   openPopup(cardPopup);
 }
 
@@ -101,8 +108,7 @@ function submitAddCardForm (evt) {
   evt.preventDefault();
   const elementName =nameCardInput.value; 
   const elementUrl =urlCardInput.value; 
-  const newCard = new Card('.card-template', elementName, elementUrl, handleImageClick);
-  const elementCard = newCard.generateCard();
+  const elementCard = createCard(elementName, elementUrl);
 
   cardsContainer.prepend(elementCard);
   closePopupCard(); 

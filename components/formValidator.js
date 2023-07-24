@@ -18,12 +18,12 @@ class FormValidator {
   }
 
   _setEventListeners() { 
-    this._disableButton();
+    this.disableButton();
     this._formInputs.forEach(input => { 
     input.addEventListener('input', (evt) =>{
     this._checkInputValidity(input);
     if(this._hasInvalidInput()) {
-      this._disableButton();
+      this.disableButton();
     } else {
       this._enableButton(); 
       }
@@ -31,7 +31,7 @@ class FormValidator {
   })
 }
     
-  _disableButton() {
+  disableButton() {
     this._formButton.classList.add(this._inactiveButtonClass);
     this._formButton.setAttribute('disabled', true);
     }

@@ -38,20 +38,16 @@ class Card {
     this._buttonLike.addEventListener('click',  () => { this._handleLike()});
     this._cardDeleteButton.addEventListener('click',  () => { 
       this._handleDelete();  
-    });
-
-     
-}
+    });    
+  }
  
-
   _handleLike() {
     this._buttonLike.classList.toggle('card__like_active');
   }
 
   _handleDelete() {
     this._element.remove();
-  }
- 
+  } 
 }
 
 export default Card;
